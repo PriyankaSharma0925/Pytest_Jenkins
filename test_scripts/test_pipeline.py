@@ -21,7 +21,18 @@ def div(a,b):
 def pow(a,b):
     return a**b
 
+
+### Parameterize fixture ###
+
+@pytest.fixture(params=[(6,7,13),(9,9,18)])
+def add_parameters(request):
+    return request.param
+
 ##############################################################################
+
+def test_add_parameters(add_parameters):
+    a,b,expected = add_parameters
+    assert add(a,b) == expected, "This is correct"
 
 def test_add():
 
