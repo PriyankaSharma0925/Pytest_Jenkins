@@ -24,15 +24,25 @@ def pow(a,b):
 
 ### Parameterize fixture ###
 
-@pytest.fixture(params=[(6,7,13),(9,9,18)])
-def add_parameters(request):
-    return request.param
 
+
+@pytest.fixture(params=[(6,6,32),(9,9,81)])
+def mul_parameters(request):
+    return request.param
 ##############################################################################
+
+@pytest.mark.parametrize('base,expected', [(3,9),(4,16)])
+def test_power(base, expected):
+    assert base**2==expected
 
 def test_add_parameters(add_parameters):
     a,b,expected = add_parameters
     assert add(a,b) == expected, "This is correct"
+
+def test_mul_parameters(mul_parameters):
+    a,b,expected = mul_parameters
+    assert a*b==expected, "This is correct"
+
 
 def test_add():
 
