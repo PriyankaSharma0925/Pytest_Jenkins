@@ -12,6 +12,7 @@ class ParentClass:
 
 # Child Class
 
+
 class ChildClass(ParentClass):
     def __init__(self, a, b):
         ParentClass.__init__(self, a, b)

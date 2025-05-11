@@ -1,6 +1,4 @@
-[INFO] Starting test run
-[PASS] test_login
-[FAIL] test_checkout - AssertionError: expected 200 but got 500
-[INFO] Cleaning up
-[PASS] test_logout
-[FAIL] test_payment - TimeoutError
+content
+overridden by wrong
+mode
+selected
