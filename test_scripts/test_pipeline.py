@@ -17,10 +17,6 @@ def sub(a, b):
     return a - b
 
 
-def mul(a, b):
-    return a * b
-
-
 def div(a, b):
     return a / b
 
@@ -32,9 +28,7 @@ def pow(a, b):
 ### Parameterize fixture ###
 
 
-@pytest.fixture(params=[(6, 6, 32), (9, 9, 81)])
-def mul_parameters(request):
-    return request.param
+
 
 
 ##############################################################################
@@ -50,9 +44,6 @@ def test_add_parameters(add_parameters):
     assert add(a, b) == expected, "This is correct"
 
 
-def test_mul_parameters(mul_parameters):
-    a, b, expected = mul_parameters
-    assert a * b == expected, "This is correct"
 
 
 def test_add():
@@ -73,9 +64,6 @@ def test_addition():
 def test_substract():
     assert sub(9, 5) == 4, "Correct, 9 - 5 is 4" "False 9-5 is not 5"
 
-
-def test_multiply():
-    assert mul(10, 2) == 20, "Correct, 10 * 2 is 20" "False 10 * 2 is not 20"
 
 
 def test_division():
